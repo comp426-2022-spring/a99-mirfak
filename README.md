@@ -43,7 +43,7 @@ Some basic roles you will want to consider:
 5. Roles for team members to take charge or different parts of the project. Possible roles:
     1. Front end lead (Rohan and Ronit)
     2. Back end lead (Carter and James)
-    3. Database lead
+    3. Database lead (Tarun and maybe Rohan)
     4. Design lead
     5. Etc.
 
