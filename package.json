@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/comp426-2022-spring/a99-mirfak/issues"
   },
-  "homepage": "https://github.com/comp426-2022-spring/a99-mirfak#readme"
+  "homepage": "https://github.com/comp426-2022-spring/a99-mirfak#readme",
+  "dependencies": {
+    "csv-parse": "^5.0.4",
+    "node-csv": "^0.1.2",
+    "parse-imports": "^1.1.0",
+    "path": "^0.12.7"
+  }
 }
