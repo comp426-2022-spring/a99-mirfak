@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AiRA</title>
+    <link rel="shortcut icon" href="img/AiRA.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href = "css/styles.css">
+    <link rel = "manifest"  href ="manifest.json">
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <link rel="apple-touch-icon" href="img/dark_maskable_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#66baff">
+    <script src="./index.js"></script>
+    <script src="./event.js"></script>
+  </head>
+
+  <body style="margin: 0;"></body>
+
+  <body>
+        <!-- Navigation bar -->
+        <header class = "navbar">
+            <div class = "container-fluid">
+                <span>
+                    <img class = "aira" src = "img/AiRA_dark_512.png">
+                </span>
+                <div class = "float-end">
+                    <button class = "nobutton">
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                    </button>
+                    <button class = "nobutton">
+                        <i class="fa-solid fa-user fa-xl"></i>
+                    </button>
+                    <button  class = "nobutton">
+                        <i class="fa-solid fa-bars fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+        </header>
+
+        <header class = "main">
+            <div class = "infowindow">
+                <h1>Dummy Data</h1>
+                <script src='mean.js'></script>
+            </div>
+        
+            <div id="map"></div>
+
+            <style>
+            #map{
+                height:90vh;
+                width: 80%;
+            }
+            </style>
+            <script src="src\api.js"></script>
+            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTFuBXBXmmLPDVnjWngXa8cwOMzLYBSfk&callback=initMap"
+            async
+            >
+            </script>
+
+            <script src = "api.js"></script>
+
+    <script src = "api.js"></script>
+
+    <!--<script>
+        if ('serviceWorker' in navigator){
+            window.addEventListener('load',() =>{
+                navigator.serviceWorker.register('\sw.js');
+            });
+        }
+    </script>-->
+  </body>
+</html>
+
+
+
+
+
+
