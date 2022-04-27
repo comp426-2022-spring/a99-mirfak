@@ -7,7 +7,7 @@ function initMap(){
         center:{lat:35.8543, lng:-78.8222} 
     }
     var map = new google.maps.Map(document.getElementById('map'), options);
-    var data = [{"state":"alaska", "latitude":61.3850,"longitude":-152.2683}, 
+    var data = [{"state":"Alaska", "latitude":61.3850,"longitude":-152.2683}, 
                 {"state":"Alabama","latitude":32.7990,"longitude":-86.8073},
                 {"state":"Arkansas","latitude":34.9513,"longitude":-92.3809},
                 {"state":"Arizona","latitude":33.7712,"longitude":-111.3877},
