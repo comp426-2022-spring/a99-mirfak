@@ -22,6 +22,7 @@
     "express": "^4.17.3",
     "firebase": "^9.6.11",
     "fs": "^0.0.1-security",
+    "morgan": "^1.10.0",
     "node-csv": "^0.1.2",
     "parse-imports": "^1.1.0",
     "path": "^0.12.7",
