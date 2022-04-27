@@ -1,6 +1,7 @@
 const http = require('https');
 const fs = require('fs');
 const { Console } = require('console');
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const file = fs.createWriteStream("file.csv");
 const request = http.get("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", function(response) {

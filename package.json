@@ -2,7 +2,7 @@
   "name": "a99-mirfak",
   "version": "1.0.0",
   "description": "COVID19 dash for geographic-specific COVID data",
-  "main": "index.js",
+  "main": "loginIndex.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +18,7 @@
   "homepage": "https://github.com/comp426-2022-spring/a99-mirfak#readme",
   "dependencies": {
     "better-sqlite3": "^7.5.1",
+    "bootstrap": "^5.1.3",
     "csv-parse": "^5.0.4",
     "express": "^4.17.3",
     "firebase": "^9.6.11",
@@ -26,6 +27,8 @@
     "node-csv": "^0.1.2",
     "parse-imports": "^1.1.0",
     "path": "^0.12.7",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "react-bootstrap": "^2.3.0",
+    "react-dom": "^18.1.0"
   }
 }
