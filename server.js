@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const fs = require('fs')
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
+const http = require('https');
 
 // Get Port
 const args = require("minimist")(process.argv.slice(2));
@@ -21,3 +22,17 @@ app.get('/app/covid/:state', (req, res, next) => {
     const state = flipACoin(req.params.state) //create new function instead of flipACoin
     res.status(200).json(state)
 })
+app.get('/app/data/', (req, res) => {
+  const file = fs.createWriteStream("national.csv");
+  const request = http.get("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv", function(response) {
+  response.pipe(file);
+});
+
+var data = fs.readFileSync('national.csv')
+  .toString() // convert Buffer to string
+  .split('\n') // split string to lines
+  .map(e => e.trim()) // remove white spaces for each line
+  .map(e => e.split(',').map(e => e.trim())); // split each line to array
+  
+  res.status(200).json({ "date" : data[data.length-1][0], "cases": data[data.length-1][1], "deaths": data[data.length-1][2] })
+});
