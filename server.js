@@ -51,7 +51,7 @@ var states = fs.readFileSync('states.csv')
 
   
   //for (let i = 0; i < states.length; i++) {
-  res.status(200).json(states.splice(states.length-56, states.length-1))
-  //res.status(200).send("it works!");
+  res.status(200).json(states)
+  //res.status(200).send("it works!");.splice(states.length-56, states.length-1)
   //}
 });

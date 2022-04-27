@@ -9,14 +9,19 @@ return response.json();
   document.getElementById("cases").innerHTML = result.cases;
 })
 
-function statesData() {
-  fetch('http://localhost:5555/app/states/')
-    .then(function(response) {
-    return response.json();
-    })
-    .then(function(result) {
-        const statesData2 = result;
-    })
-}
 
-module.exports(statesData)
+// var statesData;
+
+// fetch('https://jsonplaceholder.typicode.com/posts/1')
+//   .then(res => res.json())
+//   .then(data => statesData = data)
+//   .then(() => console.log(statesData))
+
+
+// fetch('http://localhost:5555/app/states/')
+//   .then(function(response) {
+//   return response.json();
+//   })
+//   .then(function(result) {
+//       const statesData2 = result;
+//   })

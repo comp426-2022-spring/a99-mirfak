@@ -1,13 +1,7 @@
 // const statesData = require('./states.json');
 // var test = statesData.states[0].state;
-
-const { append } = require("express/lib/response");
-const { stat } = require("fs");
-
 // console.log(test);
 //const statesData = [];
-app.use(require('./mean.js'))
-console.log(statesData2)
 
 function initMap(){
     var options = {
@@ -80,8 +74,6 @@ function initMap(){
   
         const infowindow = new google.maps.InfoWindow({
             content: name
-            
-
         });
         marker.addListener("click", () => {
             infowindow.open({
@@ -90,5 +82,13 @@ function initMap(){
                 shouldFocus: false,
             });
         });
+    }
+
+    function createString(state, infoArr){
+        for(entry in infoArr){
+            if(entry[1] === state){
+                return (`${state}: Deaths-`)
+            }
+        }
     }
 }
