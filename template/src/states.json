@@ -1,4 +1,5 @@
-[
+{
+"states": [
     {
       "state":"Alaska",
       "latitude":61.3850,
@@ -260,3 +261,4 @@
         "longitude":-66.628
     }
   ]
+}

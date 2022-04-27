@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#66baff">
     <script src="./index.js"></script>
-    <script src="./event.js"></script>
+    <script src="./map.js"></script>
   </head>
 
   <body style="margin: 0;"></body>
@@ -46,7 +46,7 @@
                 <p>Cases: <span id="cases"></span></p>
                 <p>Deaths: <span id="deaths"></span></p>
 
-                <script src='mean.js'></script>
+                <!--<script src='mean.js'></script> -->
             </div>
         
             <div id="map"></div>
@@ -57,17 +57,13 @@
                 width: 80%;
             }
             </style>
-            <script src="src\api.js"></script>
+            <script src = "map.js"></script>
             <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-            <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTFuBXBXmmLPDVnjWngXa8cwOMzLYBSfk&callback=initMap"
-            async
-            >
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTFuBXBXmmLPDVnjWngXa8cwOMzLYBSfk&callback=initMap">
             </script>
-
-            <script src = "api.js"></script>
-
-    <script src = "api.js"></script>
+        </header>
+            
 
     <!--<script>
         if ('serviceWorker' in navigator){
