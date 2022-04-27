@@ -1,6 +1,14 @@
 // const statesData = require('./states.json');
 // var test = statesData.states[0].state;
+
+const { append } = require("express/lib/response");
+const { stat } = require("fs");
+
 // console.log(test);
+//const statesData = [];
+app.use(require('./mean.js'))
+console.log(statesData2)
+
 function initMap(){
     var options = {
         zoom:4,
@@ -69,9 +77,11 @@ function initMap(){
             position: new google.maps.LatLng(slat, slng),
             map:map
         });
-
+  
         const infowindow = new google.maps.InfoWindow({
-            content: name,
+            content: name
+            
+
         });
         marker.addListener("click", () => {
             infowindow.open({

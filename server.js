@@ -36,3 +36,22 @@ var data = fs.readFileSync('national.csv')
   
   res.status(200).json({ "date" : data[data.length-1][0], "cases": data[data.length-1][1], "deaths": data[data.length-1][2] })
 });
+
+app.get('/app/states/', (req, res) => {
+  const newfile = fs.createWriteStream("states.csv");
+  const request = http.get("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", function(response) {
+  response.pipe(newfile);
+});
+
+var states = fs.readFileSync('states.csv')
+  .toString() // convert Buffer to string
+  .split('\n') // split string to lines
+  .map(e => e.trim()) // remove white spaces for each line
+  .map(e => e.split(',').map(e => e.trim())); // split each line to array
+
+  
+  //for (let i = 0; i < states.length; i++) {
+  res.status(200).json(states.splice(states.length-56, states.length-1))
+  //res.status(200).send("it works!");
+  //}
+});

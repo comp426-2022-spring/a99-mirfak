@@ -42,19 +42,22 @@ var data = fs.readFileSync('national.csv')
     res.status(200).json({ "date" : data[data.length-1][0], "cases": data[data.length-1][1], "deaths": data[data.length-1][2] })
 });
 
-pp.get('/app/states/', (req, res) => {
-    const file = fs.createWriteStream("states.csv");
+app.get('/app/states/', (req, res) => {
+    const newfile = fs.createWriteStream("states.csv");
     const request = http.get("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", function(response) {
     response.pipe(file);
 });
 
-var data = fs.readFileSync('states.csv')
+var states = fs.readFileSync('states.csv')
     .toString() // convert Buffer to string
     .split('\n') // split string to lines
     .map(e => e.trim()) // remove white spaces for each line
     .map(e => e.split(',').map(e => e.trim())); // split each line to array
+
     
-    res.status(200).json({ "date" : data[data.length-1][0], "state": data[data.length-1][1], "cases": data[data.length-1][2], "deaths": data[data.length-1][3] })
+    //for (let i = 0; i < states.length; i++) {
+        res.status(200).json({ "date" : states[0][0], "state": states[0][1], "cases": states[0][3], "deaths": states[0][4] })
+    
 });
 
 // Default API endpoint that returns 404 Not found for any endpoints that are not defined.
