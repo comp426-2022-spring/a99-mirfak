@@ -1,16 +1,8 @@
 # a99 Final Project
 
-## UPDATE
+## mirfak COVID-19 dashboard 
 
-You don't need to accept this assignment since you are already assigned to teams. So, there is not assignment invite link for a99.
-
-## Summary 
-
-COMP426 final project template repository.
-All your code and documentation goes here.
-Change this text to be a brief description of your final project.
-Put the name of your project in the header above.
-You will change everything below to be the main technical documentation, as outlined below.
+The mirfak COVID-19 dashboard is a user-friendly display of relevant COVID-19 information for the United States. It displays national COVID-19 data and data for each U.S. state and territory. The data shown is the cumulative cases and deaths up until the current date. It is displayed on a clickable map that shows the data for the state that is clicked.
 
 ## First steps
 
