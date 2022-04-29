@@ -66,7 +66,7 @@ Good skill and be creative!
 
 ### /
 
-Responds with an updated COVID-19 dashboard that includes national data and state data for the state that is clicked.
+The front end of the website is an updated COVID-19 dashboard that includes national data and state data for the state that is clicked. It can be accessed by visiting http://localhost:5555/
 
 
 ### /app/data/
