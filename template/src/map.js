@@ -75,7 +75,20 @@ function initMap(){
         const infowindow = new google.maps.InfoWindow({
             content: name
         });
+
         marker.addListener("click", () => {
+        fetch('http://localhost:5555/app/states/')
+        .then(function(response) {
+        return response.json();
+        })
+        .then(function(result) {
+        console.log(result);
+        document.getElementById("date").innerHTML = result[0];
+        document.getElementById("deaths").innerHTML = result[1];
+        document.getElementById("cases").innerHTML = result[2];
+        document.getElementById("heading").innerText = name;
+})
+            
             infowindow.open({
                 anchor: marker,
                 map,
