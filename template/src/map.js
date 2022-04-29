@@ -73,7 +73,12 @@ function initMap(){
         
         const marker = new google.maps.Marker({
             position: new google.maps.LatLng(slat, slng),
-            map:map
+            map:map,
+            icon: {
+                url: "img/covidmarker.png",
+                size: new google.maps.Size(40, 40),
+                scaledSize: new google.maps.Size(40, 40)
+            }
         });
   
         const infowindow = new google.maps.InfoWindow({
