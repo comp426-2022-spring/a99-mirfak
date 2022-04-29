@@ -48,6 +48,15 @@ var states = fs.readFileSync('./covid_data/states.csv')
   res.status(200).json(states.splice(states.length-56, states.length-1))
 });
 
+app.use(require('./middleware/access_middleware'))
+
+// Logging to database
+// Use morgan for logging to files
+// Create a write stream to append (flags: 'a') to a file
+const accesslog = fs.createWriteStream('./database/access.log', { flags: 'a' })
+// Set up the access logging middleware
+app.use(morgan('accesslog', { stream: accesslog }))
+
 
 // Default API endpoint that returns 404 Not found for any endpoints that are not defined.
 app.use(function(req, res){
