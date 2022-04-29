@@ -18,17 +18,13 @@ const server = app.listen(port, () => {
 
 app.use(express.static('./template/src'))
 
-app.get('/app/covid/:state', (req, res, next) => {
-    const state = flipACoin(req.params.state) //create new function instead of flipACoin
-    res.status(200).json(state)
-})
 app.get('/app/data/', (req, res) => {
-  const file = fs.createWriteStream("national.csv");
+  const file = fs.createWriteStream("./covid_data/national.csv");
   const request = http.get("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv", function(response) {
   response.pipe(file);
 });
 
-var data = fs.readFileSync('national.csv')
+var data = fs.readFileSync('./covid_data/national.csv')
   .toString() // convert Buffer to string
   .split('\n') // split string to lines
   .map(e => e.trim()) // remove white spaces for each line
@@ -38,20 +34,31 @@ var data = fs.readFileSync('national.csv')
 });
 
 app.get('/app/states/', (req, res) => {
-  const newfile = fs.createWriteStream("states.csv");
+  const newfile = fs.createWriteStream("./covid_data/states.csv");
   const request = http.get("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", function(response) {
   response.pipe(newfile);
 });
 
-var states = fs.readFileSync('states.csv')
+var states = fs.readFileSync('./covid_data/states.csv')
   .toString() // convert Buffer to string
   .split('\n') // split string to lines
   .map(e => e.trim()) // remove white spaces for each line
   .map(e => e.split(',').map(e => e.trim())); // split each line to array
 
-  
-  //for (let i = 0; i < states.length; i++) {
   res.status(200).json(states.splice(states.length-56, states.length-1))
-  //res.status(200).send("it works!");.splice(states.length-56, states.length-1)
-  //}
+});
+
+
+// Default API endpoint that returns 404 Not found for any endpoints that are not defined.
+app.use(function(req, res){
+  const statusCode = 404
+  const statusMessage = 'NOT FOUND'
+  res.status(statusCode).end(statusCode+ ' ' +statusMessage)
+});
+
+// Tell STDOUT that the server is stopped
+process.on('SIGINT', () => {
+  server.close(() => {
+  console.log('\nApp stopped.');
+});
 });
