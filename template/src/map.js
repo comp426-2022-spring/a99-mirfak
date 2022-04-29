@@ -87,10 +87,12 @@ function initMap(){
         })
         .then(function(result) {
         console.log(result);
-        document.getElementById("date").innerHTML = result[i];
-        document.getElementById("deaths").innerHTML = result[i][4];
-        document.getElementById("cases").innerHTML = result[i][3];
-        document.getElementById("heading").innerText = name;
+        document.getElementById("state_date").innerHTML = result[i][0];
+        document.getElementById("state_deaths").innerHTML = result[i][4];
+        document.getElementById("state_cases").innerHTML = result[i][3];
+        document.getElementById("state_name").innerHTML = result[i][1];
+        //document.getElementById("heading").innerText = name;
+        name = result[i][2];
 })
             
             infowindow.open({
