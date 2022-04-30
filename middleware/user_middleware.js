@@ -1,21 +1,16 @@
+// Did not reference this file, do not think it is needed.
+
 const db = require('../database/userlog_db')
 
 // Update with user details instead of access details
 const log = (req, res, next) => {
-    let logdata = {
-    remoteaddr: req.ip,
-    remoteuser: req.user,
-    time: Date.now(),
-    method: req.method,
-    url: req.url,
-    protocol: req.protocol,
-    httpversion: req.httpVersion,
-    status: res.statusCode,
-    referer: req.headers['referer'],
-    useragent: req.headers['user-agent']
+    let userdata = {
+    email: req.email,
+    password: req.password,
+    time: Date.now()
     }
-    const stmt = db.prepare('INSERT INTO userlog (remoteaddr, remoteuser, time, method, url, protocol, httpversion, status, referer, useragent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
-    const info = stmt.run(logdata.remoteaddr, logdata.remoteuser, logdata.time, logdata.method, logdata.url, logdata.protocol, logdata.httpversion, logdata.status, logdata.referer, logdata.useragent)
+    const stmt = db.prepare('INSERT INTO userlog (email, password, time) VALUES (?, ?, ?)')
+    const info = stmt.run(userdata.email, userdata.password, userdata.time)
 
     next();
 };
