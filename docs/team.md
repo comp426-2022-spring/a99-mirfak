@@ -9,4 +9,4 @@ Team Mirfak consisted of developers from the University of North Carolina at Cha
 | Rohan Venkatraman     | Project Manager, Database Lead |
 | Ronit Ray | Release Manager, Front End Lead | 
 | Carter Goldman      | Plan Manager, Back End Lead | 
-| Tarun Amasa   | User Authentication Lead, Review Manager | 
+| Tarun Amasa   | Review Manager, User Authentication Lead | 
