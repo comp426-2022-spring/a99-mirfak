@@ -1,42 +1,47 @@
 
 
 <html>
-  <head>
-      <title>Test Dashboard Sign Up1</title>
-      <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> -->
-      <link rel="stylesheet" href="style.css"/>
-      <script type="module" src="/index.js"></script>
-  </head>
+    <head>
+        <title>Test Dashboard Sign Up1</title>
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> -->
+        <link rel="stylesheet" href="style.css"/>
+        <script type="module" src="/index.js"></script>
+    </head>
+  
+    <body>
+        <ul class="top">
+            <div class="text">
+                <strong>NC Covid County Dashboard</strong>
+            </div>
+            <!-- <li><a href="index.html"><button class="clear" onclick="logout()"><strong>Sign Out</strong></button></a></li> -->
+            <li></li>
+        </ul>
+        <div id="login_div" class="home">
+            <h3>Covid Dashboard Sign Up</h3>
+            <input type="email" placeholder="Email: abcd@email.com"  id="email_field"/>
+            <input type="password" placeholder="Password: 5 or more characters" id="password_field"/>
+  
+            <button onclick="signin()"><strong>Create New Account</strong></button>
+  
+            <h3>Covid Dashboard Log In</h3>
+            <input type="email" placeholder="Email: abcd@email.com"  id="email_login"/>
+            <input type="password" placeholder="Password: 5 or more characters" id="password_login"/>
+  
+            <button onclick="login()"><strong>Log In to Account</strong></button>
+            <button onclick="logout()"><strong>Log out of Account</strong></button>
+            <button onclick="goToPage()"()>Go to Dashboard</button>
 
-  <body>
-      <ul class="top">
-          <div class="text">
-              <strong>NC Covid County Dashboard</strong>
-          </div>
-          <!-- <li><a href="index.html"><button class="clear" onclick="logout()"><strong>Sign Out</strong></button></a></li> -->
-          <li></li>
-      </ul>
-      <div id="login_div" class="home">
-          <h3>Covid Dashboard Sign Up</h3>
-          <input type="email" placeholder="Email: abcd@email.com"  id="email_field"/>
-          <input type="password" placeholder="Password: 5 or more characters" id="password_field"/>
 
-          <button onclick="signin()"><strong>Create New Account</strong></button>
-
-          <h3>Covid Dashboard Log In</h3>
-          <input type="email" placeholder="Email: abcd@email.com"  id="email_login"/>
-          <input type="password" placeholder="Password: 5 or more characters" id="password_login"/>
-
-          <button onclick="login()"><strong>Log In to Account</strong></button>
-          <!-- <a href="mainPage.html"><button onclick="login()">Login to Account</button></a> -->
-          <!-- <button onclick="login()" href="mainPage.html">Login to Account</button> -->
-
-      </div>
-
-      <div id="user_div" class="signedin">
-          <h3>Welcome User</h3>
-          <p style="color:green">Congratulations! You've created a new account!</p>
-          <button onclick="logout()">Logout</button>
-      </div>    
-  </body>
-</html>
+            <!-- <a href="mainPage.html"><button onclick="login()">Login to Account</button></a> -->
+            <!-- <button onclick="login()" href="mainPage.html">Login to Account</button> -->
+  
+        </div>
+  
+        <div id="user_div" class="signedin">
+            <h3>Welcome User</h3>
+            <p style="color:green">Congratulations! You've created a new account!</p>
+            <button onclick="logout()">Logout</button>
+            <button onclick="goToPage()"()>Go to Dashboard</button>
+        </div>    
+    </body>
+  </html>

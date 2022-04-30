@@ -2,11 +2,10 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
 
-// Bring in user db
-const user_db = require('../../database/userlog_db')
-//import log from '../../middleware/user_middleware'
 
 // https://firebase.google.com/docs/web/setup#available-libraries
+// window.onload = auth.signOut()
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -62,12 +61,22 @@ window.login = function() {
       const errorMessage = error.message;
     });
 
-    let userhistory = {email: userEmail, time: Date.now()}
 
-    const stmt = db.prepare('INSERT INTO userlog (email, time) VALUES (?, ?)')
-    const info = stmt.run(userhistory.email, userhistory.time)
 };
 
+window.goToPage = function(){
+    signInWithEmailAndPassword(auth, user.userEmail, user.userPass)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      location.href = '/main.html';
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+}
 window.signin = function() {
 
   var userEmail = document.getElementById("email_field").value;
@@ -85,26 +94,11 @@ window.signin = function() {
     // ..
   });
 
-  let userdata = {email: userEmail, password: userPass}
-  let userhistory = {email: userEmail, time: Date.now()}
-
-  let stmt = user_db.prepare("SELECT * FROM userlog WHERE email = ?")
-  let info = stmt.get(userhistory.email)
-
-  if (typeof info == "undefined") {
-    stmt2 = user_db.prepare("INSERT INTO userlog (email, password) VALUES (?, ?)")
-    info2 = stmt2.run(userdata.userEmail, userdata.userPass)
-  }
-
-  stmt = user_db.prepare('INSERT INTO userhistory (email, time) VALUES (?, ?)')
-  info = stmt.run(userhistory.email, userhistory.time)
-
 };
 
 window.logout = function() {
   auth.signOut();
 };
-
 
 
 
