@@ -34,9 +34,11 @@ curl http://localhost:5555/app/data/
 ```
 ### /app/states/
 
-#### Response body
 
 This enpoint is used to pull the state covid data from the New York Times public csv found at https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv. It uses the http dependency to get this data and the fs dependency to write it to a local file. After the data is written, it is parsed in JSON format. Only the current day's data is sent to the endpoint. 
+
+#### Response body
+
 ```
 curl http://localhost:5555/app/states/
 ```
