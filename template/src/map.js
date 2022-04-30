@@ -65,7 +65,9 @@ function initMap(){
                 {"state":"West Virginia","latitude":38.4680,"longitude":-80.9696},
                 {"state":"Wisconsin","latitude":44.2563,"longitude":-89.6385},
                 {"state":"Wyoming","latitude":42.7475,"longitude":-107.2085}];
-                
+
+    var infowindow = new google.maps.InfoWindow({});
+
     for (let i = 0; i < data.length; i++){
         var name = data[i].state;
         var slat = data[i].latitude;
@@ -73,18 +75,9 @@ function initMap(){
         
         const marker = new google.maps.Marker({
             position: new google.maps.LatLng(slat, slng),
-            map:map,
-            icon: {
-                url: "img/covidmarker.png",
-                size: new google.maps.Size(40, 40),
-                scaledSize: new google.maps.Size(40, 40)
-            }
+            map:map
         });
-  
-        const infowindow = new google.maps.InfoWindow({
-            content: name
-        });
-
+        
         marker.addListener("click", () => {
         fetch('http://localhost:5555/app/states/')
         .then(function(response) {
@@ -97,9 +90,20 @@ function initMap(){
         document.getElementById("state_cases").innerHTML = result[i][3];
         document.getElementById("state_name").innerHTML = result[i][1];
         //document.getElementById("heading").innerText = name;
-        name = result[i][2];
+        var statename = result[i][1];
+        infowindow.setContent(
+            '<div id="content">' +
+            '<div id="siteNotice">' +
+            "</div>" +
+            '<h2 id="firstHeading" class="firstHeading">'+ statename +'</h2>' + 
+            '<div id="bodyContent">' + 
+            '<h6>Date: '+ result[i][0] +'</h6>' +
+            '<h6>Cases: '+ result[i][3] +'</h6>' +
+            '<h6>Deaths: '+ result[i][4] +'</h6>' + 
+            "</div>" +
+        "</div>");
 })
-            
+        infowindow.close();
             infowindow.open({
                 anchor: marker,
                 map,
