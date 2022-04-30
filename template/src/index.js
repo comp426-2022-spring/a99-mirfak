@@ -7,6 +7,11 @@ import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWith
 // window.onload = auth.signOut()
 
 
+// window.onabort = function(){
+//     //use fetch
+//     fetch('http://localhost:5555/sessionLogout/')
+// }
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyA8oMtNsfBn7MsmxiXDoMRwUtOk-1RtJcY",
@@ -20,6 +25,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// window.onabort(app.delete())
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -65,19 +71,13 @@ window.login = function() {
 };
 
 window.goToPage = function(){
-    // signInWithEmailAndPassword(auth, user.userEmail, user.userPass)
-    // .then((userCredential) => {
-    //   // Signed in 
-    //   const user = userCredential.user;
-    //   location.href = '/main.html';
-    //   // ...
-    // })
-    // .catch((error) => {
-    //   const errorCode = error.code;
-    //   const errorMessage = error.message;
-    // });
-    location.href = '/main.html';
+    location.href = '/main.html'
 }
+
+window.goToSignup = function(){
+    location.href = '/signup.html'
+}
+
 window.signin = function() {
 
   var userEmail = document.getElementById("email_field").value;
@@ -99,6 +99,7 @@ window.signin = function() {
 
 window.logout = function() {
   auth.signOut();
+  location.href = '/index.html'
 };
 
 

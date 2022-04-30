@@ -8,10 +8,19 @@ app.use(express.json())
 const http = require('https');
 
 // Get Port
+
+
+
 const args = require("minimist")(process.argv.slice(2));
 var port = args.port || 5555;
 
 // Start an app server
+
+
+app.post('/sessionLogout', (req, res) => {
+  res.clearCookie('session');
+});
+
 const server = app.listen(port, () => {
   console.log('App listening on port %PORT%'.replace('%PORT%',port));
 });
