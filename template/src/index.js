@@ -65,17 +65,18 @@ window.login = function() {
 };
 
 window.goToPage = function(){
-    signInWithEmailAndPassword(auth, user.userEmail, user.userPass)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      location.href = '/main.html';
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
+    // signInWithEmailAndPassword(auth, user.userEmail, user.userPass)
+    // .then((userCredential) => {
+    //   // Signed in 
+    //   const user = userCredential.user;
+    //   location.href = '/main.html';
+    //   // ...
+    // })
+    // .catch((error) => {
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
+    // });
+    location.href = '/main.html';
 }
 window.signin = function() {
 
