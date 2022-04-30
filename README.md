@@ -32,7 +32,7 @@ curl http://localhost:5555/app/data/
 ```json
 {"date":"2022-04-28","cases":"81156232","deaths":"991502"}
 ```
-### /app/flips/states/
+### /app/states/
 
 #### Response body
 
