@@ -2,7 +2,7 @@
 INSTRUCTIONS
 ----------------------------------------------------------------------
 
-After cloning this directory, run "npm install" inside the directory to install the necessary dependencies. After everything is installed, run "node server.js" to display the mirfak COVID-19 dashboard.
+After cloning this directory, run "npm install" inside the directory to install the necessary dependencies. Make sure cookies are cleared on the browser you will be using to serve the html. After cookies are cleared, run "node server.js" to display the mirfak COVID-19 dashboard.
 
 
 DEPENDENCY LIST
