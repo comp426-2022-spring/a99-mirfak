@@ -2,7 +2,7 @@
 
 ## mirfak COVID-19 dashboard 
 
-The mirfak COVID-19 dashboard is a user-friendly display of relevant COVID-19 information for the United States. It displays national COVID-19 data and data for each U.S. state and territory. The data shown is the cumulative cases and deaths up until the current date. It is displayed on a clickable map that shows the data for the state that is clicked.
+The mirfak COVID-19 dashboard is a user-friendly display of relevant COVID-19 information for the United States. It displays national COVID-19 data and data for each U.S. state and territory. The data shown is the cumulative cases and deaths up until the current date. It is displayed on a clickable map that shows the data for the state that is clicked. To see a video explanation of how the website works, visit https://youtu.be/fGJ8AM1mjns
 
 ## Installation
 
